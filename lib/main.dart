@@ -1,4 +1,5 @@
 import 'package:course_app/constants.dart';
+import 'package:course_app/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -97,10 +98,36 @@ class HomeScreen extends StatelessWidget {
             ),
             Expanded(
                 child: StaggeredGridView.countBuilder(
+                    padding: EdgeInsets.all(0),
                     crossAxisCount: 2,
+                    itemCount: categories.length,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
                     itemBuilder: (context, index) {
                       return Container(
-                        height: 100,
+                        padding: EdgeInsets.all(20),
+                        height: index.isEven ? 200 : 240,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          image: DecorationImage(
+                            image: AssetImage(categories[index].image),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              categories[index].name,
+                              style: kTitleTextStyle,
+                            ),
+                            Text(
+                              "${categories[index].numOfCourses} Cursos",
+                              style:
+                                  TextStyle(color: kTextColor.withOpacity(.5)),
+                            )
+                          ],
+                        ),
                       );
                     },
                     staggeredTileBuilder: (index) => StaggeredTile.fit(1)))
