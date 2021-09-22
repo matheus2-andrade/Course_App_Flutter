@@ -1,4 +1,5 @@
 import 'package:course_app/constants.dart';
+import 'package:course_app/details_screen.dart';
 import 'package:course_app/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Course App',
       theme: ThemeData(),
-      home: HomeScreen(),
+      home: DetailsScreen(),
     );
   }
 }
