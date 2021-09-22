@@ -1,9 +1,9 @@
 class Category {
-  final String name = '';
-  final int numOfCourses = 1;
-  final String image = '';
+  final String name;
+  final int numOfCourses;
+  final String image;
 
-  Category({name, numOfCourses, image});
+  Category({required this.name, required this.numOfCourses, required this.image});
 }
 
 List<Category> categories = [

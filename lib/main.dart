@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Course App',
       theme: ThemeData(),
-      home: HomeScreen(),
+      home: DetailsScreen(),
     );
   }
 }
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Text(
               "Olá Matheus,",
@@ -99,39 +99,41 @@ class HomeScreen extends StatelessWidget {
             ),
             Expanded(
                 child: StaggeredGridView.countBuilder(
-                    padding: EdgeInsets.all(0),
-                    crossAxisCount: 2,
-                    itemCount: categories.length,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        padding: EdgeInsets.all(20),
-                        height: index.isEven ? 200 : 240,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          image: DecorationImage(
-                            image: AssetImage(categories[index].image),
-                            fit: BoxFit.fill,
-                          ),
+              padding: EdgeInsets.all(0),
+              crossAxisCount: 2,
+              itemCount: categories.length,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+              itemBuilder: (context, index) {
+                return Container(
+                  padding: EdgeInsets.all(20),
+                  height: index.isEven ? 200 : 240,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    image: DecorationImage(
+                      image: AssetImage(categories[index].image),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        categories[index].name,
+                        style: kTitleTextStyle,
+                      ),
+                      Text(
+                        '${categories[index].numOfCourses} Courses',
+                        style: TextStyle(
+                          color: kTextColor.withOpacity(.5),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              categories[index].name,
-                              style: kTitleTextStyle,
-                            ),
-                            Text(
-                              "${categories[index].numOfCourses} Cursos",
-                              style:
-                                  TextStyle(color: kTextColor.withOpacity(.5)),
-                            )
-                          ],
-                        ),
-                      );
-                    },
-                    staggeredTileBuilder: (index) => StaggeredTile.fit(1)))
+                      )
+                    ],
+                  ),
+                );
+              },
+              staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+            ))
           ],
         ),
       ),

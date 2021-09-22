@@ -91,7 +91,7 @@ class DetailsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 60,
+            height: 20,
           ),
           Expanded(
             child: Container(
@@ -116,7 +116,7 @@ class DetailsScreen extends StatelessWidget {
                           number: "01",
                           duration: 5.35,
                           title: "Bem vindo ao curso",
-                          isDone: true,
+                          isDone: false,
                         ),
                         CourseContent(
                           number: "02",
