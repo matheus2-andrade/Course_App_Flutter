@@ -1,16 +1,24 @@
-# course_app
+# Course App - Flutter
 
-A new Flutter project.
+## Hi! this is my course app created in flutter. I hope you enjoy!
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### I developed this app in order to learn some more techniques, widgets and code structuring, the App consists on a UI of courses that pulls data from a database, I hope you like it :D
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Home Screen
+<img src="/forgit/screen1.png" alt="My cool logo" width="300"/>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Course Screen
+<img src="/forgit/screen2.png" alt="My cool logo" width="300"/>
+
+## All screens are designed to be 100% responsive on any device.
+
+**Packages used:**
+
+- flutter_svg: [link](https://pub.dev/packages/flutter_svg)
+- flutter_staggered_grid_view: [link](https://pub.dev/packages/flutter_staggered_grid_view)
+
+**Fonts**
+
+- Nunito
